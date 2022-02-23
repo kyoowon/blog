@@ -3,6 +3,32 @@ html[data-theme='dark'] button {
   border: none !important;
   box-shadow: none !important;
 }
+
+html[data-theme='dark'] .list[data-mode='grid'] .item .description .title::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+html[data-theme='dark'] .list[data-mode='grid'] .item .description .title:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+html[data-theme='dark'] .list[data-mode='grid'] .item .description .title::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: #f0506e;
+  z-index: -1;
+  transition: transform .3s ease;
+}
+
+html[data-theme='dark'] .list[data-mode='grid'] .item .description .title{
+  position: relative;
+}
+
 html[data-theme='dark'] .list[data-mode='zigzag'] .item .description {
   background: var(--h-color-background-level-2);
   border: none;
